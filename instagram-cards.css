@@ -1,0 +1,74 @@
+/* Styles pour les cartes Instagram avec miniatures et bouton play */
+
+/* Container pour la miniature et le bouton */
+.instagram-thumbnail-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-thumbnail-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Style de l'image miniature */
+.instagram-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  max-height: 500px;
+}
+
+/* Style du bouton play */
+.instagram-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.instagram-play-button:hover {
+  background: var(--color-accent-blue);
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+}
+
+.instagram-play-button i {
+  font-size: 24px;
+  margin-left: 4px; /* Léger décalage pour centrer visuellement l'icône play */
+}
+
+/* Overlay pour l'effet de hover */
+.instagram-thumbnail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.instagram-thumbnail-container:hover .instagram-thumbnail-overlay {
+  opacity: 1;
+}
